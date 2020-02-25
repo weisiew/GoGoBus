@@ -18,6 +18,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private Button logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,22 +26,20 @@ public class SecondActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        logout = (Button) findViewById(R.id.btnLogout);
+        logout = (Button)findViewById(R.id.btnLogout);
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Logout();
             }
         });
-
     }
 
     private void Logout(){
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(SecondActivity.this, MainActivity.class));
-
     }
 
     @Override
@@ -52,7 +51,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch(item.getItemId()){
             case R.id.logoutMenu:{
                 Logout();
             }

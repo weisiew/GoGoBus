@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class PasswordActivity extends AppCompatActivity {
 
@@ -42,18 +41,17 @@ public class PasswordActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(PasswordActivity.this, "Password reset email send!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PasswordActivity.this, "Password reset email sent!", Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(new Intent(PasswordActivity.this, MainActivity.class));
                             }else{
-                                Toast.makeText(PasswordActivity.this, "Error in sending password reset email", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PasswordActivity.this, "Error in sending password reset email!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 }
+
             }
         });
-
-
     }
 }

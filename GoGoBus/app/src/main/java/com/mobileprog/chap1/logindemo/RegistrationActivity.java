@@ -55,7 +55,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 Toast.makeText(RegistrationActivity.this, "Succesfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
-                                //sendEmailVerification();
+                                sendEmailVerification();
                             }else{
                                 Toast.makeText(RegistrationActivity.this,"Registration Failed", Toast.LENGTH_SHORT).show();
                             }
