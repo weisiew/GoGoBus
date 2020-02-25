@@ -15,8 +15,12 @@
       },
       "oauth_client": [
         {
-          "client_id": "459735484646-2khtb867bmu82cd6qi38ro1njv3f3qs6.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "459735484646-2868843ekon3eg12gbctirdtqtanild8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobileprog.chap1.logindemo",
+            "certificate_hash": "58b24537272d81850777cde6ea91098e6bc976cc"
+          }
         }
       ],
       "api_key": [

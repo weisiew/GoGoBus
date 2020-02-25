@@ -110,6 +110,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         sendUserData();
+                        firebaseAuth.signOut();
                         Toast.makeText(RegistrationActivity.this, "Succesfully Registered, Verification mail send!", Toast.LENGTH_SHORT).show();
                         firebaseAuth.signOut();
                         finish();

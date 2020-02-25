@@ -17,9 +17,9 @@
     </item>
 
     <item
-        android:id="@+id/settingMenu"
+        android:id="@+id/profileMenu"
         android:orderInCategory="300"
         app:showAsAction="never"
-        android:title="Setting">
+        android:title="Profile">
     </item>
 </menu>
