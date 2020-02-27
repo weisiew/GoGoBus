@@ -44,12 +44,12 @@ public class UpdatePassword extends AppCompatActivity {
                 firebaseUser.updatePassword(userPasswordNew).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if(task.isSuccessful()) {
                             Toast.makeText(UpdatePassword.this, "Password Changed", Toast.LENGTH_SHORT).show();
                             finish();
-                        }else{
+                        }else
                             Toast.makeText(UpdatePassword.this, "Password Update Failed", Toast.LENGTH_SHORT).show();
-                        }
+
                     }
                 });
             }
