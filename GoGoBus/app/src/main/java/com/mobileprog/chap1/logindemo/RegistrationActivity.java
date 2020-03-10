@@ -1,6 +1,7 @@
 package com.mobileprog.chap1.logindemo;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -45,17 +46,17 @@ public class RegistrationActivity extends AppCompatActivity {
     private StorageReference storageReference;
 
     @Override
-    protected void onActivityResult(int requestCode,int resultCode, Intent data){
-        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData()!=null){
-            imagePath=data.getData();
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null){
+            imagePath = data.getData();
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),imagePath);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
                 userProfilePic.setImageBitmap(bitmap);
-            } catch (IOException e) {
+            }catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        super.onActivityResult(requestCode,resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -68,13 +69,14 @@ public class RegistrationActivity extends AppCompatActivity {
         firebaseStorage = FirebaseStorage.getInstance();
 
         storageReference = firebaseStorage.getReference();
-        userProfilePic.setOnClickListener(new View.OnClickListener() {
+
+        userProfilePic.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
                 Intent intent = new Intent();
-                intent.setType("image/*");
+                intent.setType("image/*"); //application/* audio/*
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select image"), PICK_IMAGE);
+                startActivityForResult(Intent.createChooser(intent,"Select image"), PICK_IMAGE);
             }
         });
 
@@ -83,27 +85,29 @@ public class RegistrationActivity extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validate()){
+                if(validate()){
                     //Upload data to the database
                     String user_email = userEmail.getText().toString().trim();
                     String user_password = userPassword.getText().toString().trim();
 
-                    firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    firebaseAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            if(task.isSuccessful()){
-                                sendUserData();
-                                Toast.makeText(RegistrationActivity.this, "Succesfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
-                                finish();
-                                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                            if (task.isSuccessful()){
                                 sendEmailVerification();
-                            }else{
-                                Toast.makeText(RegistrationActivity.this,"Registration Failed", Toast.LENGTH_SHORT).show();
+                                sendUserData();
+                                firebaseAuth.signOut();
+                                Toast.makeText(RegistrationActivity.this,"Successful Registered, Upload complete!",Toast.LENGTH_SHORT).show();
+
+                                finish();
+                                startActivity(new Intent(RegistrationActivity.this , MainActivity.class));
+                            }
+                            else{
+                                Toast.makeText(RegistrationActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
 
                         }
-
                     });
                 }
             }
@@ -116,15 +120,15 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
     }
-
     private void setupUIViews(){
-        userName = (EditText) findViewById(R.id.etUserName);
-        userPassword = (EditText) findViewById(R.id.etUserPassword);
-        userEmail = (EditText) findViewById(R.id.etUserEmail);
-        regButton = (Button) findViewById(R.id.btnRegister);
-        userLogin = (TextView) findViewById(R.id.tvUserLogin);
+        userName = (EditText)findViewById(R.id.etUserName);
+        userPassword = (EditText)findViewById(R.id.etUserPassword);
+        userEmail = (EditText)findViewById(R.id.etUserEmail);
+        regButton = (Button)findViewById(R.id.btnRegister);
+        userLogin = (TextView)findViewById(R.id.tvUserLogin);
         userAge = (EditText)findViewById(R.id.etAge);
-        userProfilePic=(ImageView)findViewById(R.id.ivProfile);
+        userProfilePic = (ImageView)findViewById(R.id.ivProfile);
+
     }
 
     private Boolean validate(){
@@ -140,47 +144,48 @@ public class RegistrationActivity extends AppCompatActivity {
         }else{
             result = true;
         }
-
         return result;
     }
 
     private void sendEmailVerification(){
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        if(firebaseUser != null){
+        if(firebaseUser!=null){
             firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         sendUserData();
-                        firebaseAuth.signOut();
-                        Toast.makeText(RegistrationActivity.this, "Succesfully Registered, Verification mail send!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrationActivity.this,"Successful Registered, Verification Mail Sent!",Toast.LENGTH_SHORT).show();
                         firebaseAuth.signOut();
                         finish();
-                        startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                        startActivity(new Intent(RegistrationActivity.this , MainActivity.class));
+
                     }else{
-                        Toast.makeText(RegistrationActivity.this, "Verification mail hasn't been send!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrationActivity.this,"Verification Mail has'nt been Sent!",Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
     }
+
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic"); // User Id/Images/profile_pic.png
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(RegistrationActivity.this, "Upload Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistrationActivity.this,"Upload failed",Toast.LENGTH_SHORT).show();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(RegistrationActivity.this, "Upload Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistrationActivity.this,"Upload successful!",Toast.LENGTH_SHORT).show();
             }
         });
-        UserProfile userProfile = new UserProfile(age,email,name);
+        UserProfile userProfile = new UserProfile(age, email, name);
         myRef.setValue(userProfile);
     }
+
 }
