@@ -1,4 +1,4 @@
-package com.mobileprog.chap1.logindemo;
+package com.mobileprog.chap1.gogobus;
 
 public class UserProfile {
     public String userAge;

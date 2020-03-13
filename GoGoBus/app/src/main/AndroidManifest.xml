@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mobileprog.chap1.logindemo">
+    package="com.mobileprog.chap1.gogobus">
 
     <application
         android:allowBackup="true"
@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdatePassword"></activity>
-        <activity android:name=".UpdateProfile" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".PasswordActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.mobileprog.chap1.gogobus.UpdatePassword"></activity>
+        <activity android:name="com.mobileprog.chap1.gogobus.UpdateProfile" />
+        <activity android:name="com.mobileprog.chap1.gogobus.ProfileActivity" />
+        <activity android:name="com.mobileprog.chap1.gogobus.PasswordActivity" />
+        <activity android:name="com.mobileprog.chap1.gogobus.RegistrationActivity" />
+        <activity android:name="com.mobileprog.chap1.gogobus.SecondActivity" />
+        <activity android:name="com.mobileprog.chap1.gogobus.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

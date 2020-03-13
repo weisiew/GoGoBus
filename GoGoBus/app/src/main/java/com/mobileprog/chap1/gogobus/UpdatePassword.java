@@ -1,4 +1,4 @@
-package com.mobileprog.chap1.logindemo;
+package com.mobileprog.chap1.gogobus;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

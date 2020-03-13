@@ -1,4 +1,4 @@
-package com.mobileprog.chap1.logindemo;
+package com.mobileprog.chap1.gogobus;
 
 import android.content.Context;
 
