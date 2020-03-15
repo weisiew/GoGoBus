@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.mobileprog.chap1.gogobus.UpdatePassword"></activity>
-        <activity android:name="com.mobileprog.chap1.gogobus.UpdateProfile" />
-        <activity android:name="com.mobileprog.chap1.gogobus.ProfileActivity" />
-        <activity android:name="com.mobileprog.chap1.gogobus.PasswordActivity" />
-        <activity android:name="com.mobileprog.chap1.gogobus.RegistrationActivity" />
-        <activity android:name="com.mobileprog.chap1.gogobus.SecondActivity" />
-        <activity android:name="com.mobileprog.chap1.gogobus.MainActivity">
+        <activity android:name=".BookActivity"></activity>
+        <activity android:name=".book" />
+        <activity android:name=".UpdatePassword" />
+        <activity android:name=".UpdateProfile" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".PasswordActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

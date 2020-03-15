@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF9090"
     tools:context=".UpdateProfile">
 
     <ImageView
@@ -29,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfileUpdate"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <EditText
         android:id="@+id/etAgeUpdate"
@@ -42,13 +43,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
+        app:layout_constraintVertical_bias="0.588" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
+        android:background="#02F5D4"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,12 +61,14 @@
 
     <TextView
         android:id="@+id/tvEmail"
-        android:layout_width="49dp"
-        android:layout_height="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/etAgeUpdate"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNameUpdate"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.323" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

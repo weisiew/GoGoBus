@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF9090"
     tools:context=".ProfileActivity">
 
     <ImageView
@@ -23,56 +24,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name: "
+        android:textColor="#000000"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfilePic"
-        app:layout_constraintVertical_bias="0.112" />
+        app:layout_constraintVertical_bias="0.094" />
 
     <TextView
         android:id="@+id/tvProfileAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Age: "
+        android:textColor="#000000"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileName"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.134" />
 
     <TextView
         android:id="@+id/tvProfileEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="Email:"
+        android:textColor="#000000"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileAge"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <Button
         android:id="@+id/btnProfileUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#02F5D4"
         android:text="Edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintVertical_bias="0.306" />
 
     <Button
         android:id="@+id/btnChangePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#02F5D4"
         android:text="ChangePassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
