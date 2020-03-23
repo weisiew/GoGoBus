@@ -64,6 +64,18 @@ public class ActivityCheckout extends AppCompatActivity {
                 timeC.setText(Q3);
                 timeD.setText(Q4);
                 roomNum.setText(room);
+
+                ClassBooking classBooking = dataSnapshot.getValue(ClassBooking.class);
+                double bus8am = 25.00, bus12pm = 32.00, bus4pm = 25.00, bus8pm = 35.00;
+
+                double totalBus8am = bus8am * classBooking.getTime1();
+                double totalBus12pm = bus12pm * classBooking.getTime2();
+                double totalBus4pm = bus4pm * classBooking.getTime3();
+                double totalBus8pm = bus8pm * classBooking.getTime4();
+
+                double totalAll = totalBus8am + totalBus12pm + totalBus4pm + totalBus8pm;
+                totalPrice.setText("Total RM " + String.format("%.2f", totalAll));
+
             }
 
             @Override
