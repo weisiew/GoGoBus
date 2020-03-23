@@ -136,7 +136,7 @@ public class BookingActivity extends AppCompatActivity {
         calendarViewCID.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String dateCID = (dayOfMonth + 1) + "/" + month + "/" + year;
+                String dateCID = (dayOfMonth) + "/" + month + "/" + year;
                 title.setText(dateCID);
                 CID.setText(dateCID);
             }
@@ -165,7 +165,7 @@ public class BookingActivity extends AppCompatActivity {
         calendarViewCOD.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String dateCOD = (dayOfMonth + 1) + "/" + month + "/" + year;
+                String dateCOD = (dayOfMonth) + "/" + month + "/" + year;
                 title.setText(dateCOD);
                 COD.setText(dateCOD);
             }
