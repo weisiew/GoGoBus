@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -48,12 +49,12 @@ public class ActivityCheckout extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String bookdate = dataSnapshot.child("checkindate").getValue().toString();
-                String departdate = dataSnapshot.child("checkoutdate").getValue().toString();
-                String Q1 = "Quantity: " + Integer.valueOf(dataSnapshot.child("8:00 A.M.").getValue().toString());
-                String Q2 = "Quantity: " + Integer.valueOf(dataSnapshot.child("12:00 P.M.").getValue().toString());
-                String Q3 = "Quantity: " + Integer.valueOf(dataSnapshot.child("4:00 P.M.").getValue().toString());
-                String Q4 = "Quantity: " + Integer.valueOf(dataSnapshot.child("8:00 P.M.").getValue().toString());
+                String bookdate = dataSnapshot.child("bookDate").getValue().toString();
+                String departdate = dataSnapshot.child("departDate").getValue().toString();
+                String Q1 = "Quantity: " + Integer.valueOf(dataSnapshot.child("time1").getValue().toString());
+                String Q2 = "Quantity: " + Integer.valueOf(dataSnapshot.child("time2").getValue().toString());
+                String Q3 = "Quantity: " + Integer.valueOf(dataSnapshot.child("time3").getValue().toString());
+                String Q4 = "Quantity: " + Integer.valueOf(dataSnapshot.child("time4").getValue().toString());
                 String room = dataSnapshot.child("bookingNum").getValue().toString();
 
                 booked.setText(bookdate);
