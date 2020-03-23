@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SecondActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private Button logout;
+    private Button Booking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +24,12 @@ public class SecondActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        logout = (Button)findViewById(R.id.btnLogout);
+        Booking = (Button)findViewById(R.id.btnBooking);
 
-        logout.setOnClickListener(new View.OnClickListener(){
+        Booking.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Logout();
+                startActivity(new Intent(SecondActivity.this, BookingActivity.class));
             }
         });
     }
