@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityReceipt"></activity>
         <activity android:name=".ActivityCheckout" />
         <activity android:name=".BookingActivity" />
         <activity android:name=".BookActivity" />

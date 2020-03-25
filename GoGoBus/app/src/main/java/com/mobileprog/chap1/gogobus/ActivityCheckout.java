@@ -89,7 +89,7 @@ public class ActivityCheckout extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ActivityCheckout.this, ActivityReceipt.class));
+                startActivity(new Intent(ActivityCheckout.this, SecondActivity.class));
             }
         });
     }
