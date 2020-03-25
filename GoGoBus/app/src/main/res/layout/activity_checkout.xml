@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF9090"
     android:orientation="vertical"
     tools:context=".ActivityCheckout">
 
@@ -15,53 +15,58 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Receipt"
-            android:textSize="24sp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"/>
+            android:text="Receipt"
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
             android:text="Booking Date :"
-            android:textSize="24sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="60dp"/>
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure Date :"
-            android:textSize="24sp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="100dp"/>
+            android:layout_marginTop="100dp"
+            android:text="Departure Date :"
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Booked"
-            android:textSize="24sp"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="60dp"/>
+            android:text="Booked"
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/depart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Depart"
-            android:textSize="24sp"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="100dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="100dp"/>
+            android:text="Depart"
+            android:textColor="#000000"
+            android:textSize="24sp" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_marginTop="160dp"/>
+        android:layout_marginTop="160dp"
+        android:background="@android:color/black" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -71,52 +76,58 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="8:00 A.M."
-            android:textSize="22sp"
-            android:layout_marginLeft="10dp"/>
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
             android:text="12:00 P.M."
-            android:textSize="22sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"/>
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="100dp"
             android:text="4:00 P.M."
-            android:textSize="22sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="100dp"/>
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8:00 P.M."
-            android:textSize="22sp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="150dp"/>
+            android:layout_marginTop="150dp"
+            android:text="8:00 P.M."
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/timeA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantity: 0"
-            android:textSize="22sp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:text="Quantity: 0"
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/timeB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantity: 0"
-            android:textSize="22sp"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="50dp"/>
+            android:text="Quantity: 0"
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/timeC"
@@ -126,25 +137,27 @@
             android:layout_marginTop="100dp"
             android:layout_marginRight="30dp"
             android:text="Quantity: 0"
+            android:textColor="#000000"
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/timeD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantity: 0"
-            android:textSize="22sp"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="150dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="150dp"/>
+            android:text="Quantity: 0"
+            android:textColor="#000000"
+            android:textSize="22sp" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/black"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="130dp"/>
+        android:layout_marginBottom="130dp"
+        android:background="@android:color/black" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -159,6 +172,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text="Room Number:"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
@@ -169,6 +183,7 @@
             android:layout_marginLeft="180dp"
             android:layout_marginTop="10dp"
             android:text="#"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
@@ -180,6 +195,7 @@
             android:layout_marginTop="60dp"
             android:layout_marginRight="79dp"
             android:text="Total Price"
+            android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
 

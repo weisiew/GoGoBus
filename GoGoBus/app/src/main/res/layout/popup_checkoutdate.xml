@@ -17,17 +17,18 @@
             android:id="@+id/tvTitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Check-in Date"
-            android:textSize="20sp"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:text="Book Date of Departure"
+            android:textColor="#000000"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <CalendarView
         android:id="@+id/calendarViewCOD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:background="#FF9090" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -35,12 +36,12 @@
 
         <Button
             android:id="@+id/saveCOD"
-            android:background="#FF5722"
             android:layout_width="215dp"
             android:layout_height="35dp"
+            android:layout_centerInParent="true"
             android:layout_marginTop="100dp"
+            android:background="#02F5D4"
             android:text="Save \date!"
-            android:textSize="12sp"
-            android:layout_centerInParent="true"/>
+            android:textSize="12sp" />
     </RelativeLayout>
 </LinearLayout>
