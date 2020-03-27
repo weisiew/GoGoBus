@@ -149,7 +149,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="120dp"
                     android:background="#FF5722"
-                    app:finalNumber="3"
+                    app:finalNumber="10"
                     app:initialNumber="0"
                     app:textColor="#FFFFFF"
                     app:textSize="10sp"></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
@@ -193,7 +193,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="120dp"
                     android:background="#FF5722"
-                    app:finalNumber="3"
+                    app:finalNumber="10"
                     app:initialNumber="0"
                     app:textColor="#FFFFFF"
                     app:textSize="10sp"></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
@@ -237,7 +237,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="120dp"
                     android:background="#FF5722"
-                    app:finalNumber="3"
+                    app:finalNumber="10"
                     app:initialNumber="0"
                     app:textColor="#FFFFFF"
                     app:textSize="10sp"></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
@@ -281,7 +281,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="120dp"
                     android:background="#FF5722"
-                    app:finalNumber="3"
+                    app:finalNumber="10"
                     app:initialNumber="0"
                     app:textColor="#FFFFFF"
                     app:textSize="10sp"></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
